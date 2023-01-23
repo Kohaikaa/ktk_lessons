@@ -79,11 +79,20 @@ def task10():
 
 
 def task11():
-    pass
+    num = int(input())
+    n1 = num % 10
+    n2 = int(num % 100 / 10)
+    n3 = int(num / 100)
+    result = n1 + n2 + n3
+    print(n1, n2, n3, result)
 
 
 def task12():
-    pass
+    from math import sqrt
+    k1 = int(input())
+    k2 = int(input())
+    result = int(sqrt(k1 ** 2 + k2 ** 2))
+    print(result)
 
 
 def task13():
@@ -103,4 +112,4 @@ def task16():
 
 
 if __name__ == '__main__':
-    task3()
+    task11()
