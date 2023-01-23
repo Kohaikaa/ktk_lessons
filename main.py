@@ -96,19 +96,36 @@ def task12():
 
 
 def task13():
-    pass
+    h = int(input())
+    m = int(input())
+    s = int(input())
+    result = h * 30 + m * 30 / 60 + s * 30 / 3600
+    print(result)
 
 
 def task14():
-    pass
+    a = float(input())
+    result = a % 30 * 12
+    print(result)
 
 
 def task15():
-    pass
+    angle = float(input())
+    hours = int(angle // 30)
+    minutes = int(angle % 30 * 2)
+    seconds = int(angle % 0.5 * 120)
+    print(hours, minutes, seconds)
 
 
 def task16():
-    pass
+    p = int(input())
+    x = int(input())
+    y = int(input())
+    money_before = 100 * x + y
+    money_after = int(money_before * (100 + p) / 100)
+    rubles = money_after // 100
+    kops = money_after % 100
+    print(rubles, kops)
 
 
 if __name__ == '__main__':
