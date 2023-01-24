@@ -1,101 +1,86 @@
 def task1():
-    a = int(input())
-    b = int(input())
-    for i in range(a, b+1):
-        print(i, end=' ')
+    n = int(input())
+    result = 1
+    i = 1
+    while result <= n:
+        print(result, end=' ')
+        i += 1
+        result = i ** 2
 
 
 def task2():
-    a = int(input())
-    b = int(input())
-    if a < b:
-        for i in range(a, b+1):
-            print(i, end=' ')
-    elif a > b:
-        for i in range(a, b-1, -1):
-            print(i, end=' ')
-    else:
-        print(a)
+    n = int(input())
+    i = 2
+    while n % i != 0:
+        i += 1
+    print(i)
 
 
 def task3():
-    a = int(input())
-    b = int(input())
-    for i in range(a-(a+1) % 2, b-b % 2, -2):
-        print(i, end=' ')
+    n = int(input())
+    grade = 1
+    num = 1
+    while num ** 2 < n:
+        grade += 1
+        num = num ** 2
+    print(grade, num)
 
 
 def task4():
-    result = 0
-    for i in range(10):
-        num = int(input())
-        result += num
-    print(result)
+    pass
 
 
 def task5():
-    nums = int(input())
-    result = 0
-    for i in range(nums):
-        result += int(input())
-    print(result)
+    pass
 
 
 def task6():
-    from math import pow
-    nums = int(input())
-    result = 0
-    for i in range(1, nums+1):
-        result += int(pow(i, 3))
-    print(result)
+    pass
 
 
 def task7():
-    n = int(input())
-    result = 1
-    for i in range(1, n+1):
-        result *= i
-    print(result)
+    pass
 
 
 def task8():
-    n = int(input())
-    fac_mul = 1
-    fac_sum
-    for i in range(1, n+1):
-        fac_mul *= i
-        fac_sum += fac_mul
-    print(fac_sum)
+    pass
 
 
 def task9():
-    n = int(input())
-    result = 0
-    for i in range(n):
-        num = int(input())
-        if num == 0:
-            result += 1
-    print(result)
+    pass
 
 
 def task10():
-    n = int(input())
-    last_num = 0
-    for i in range(1, n+1):
-        last_num += i
-        print(last_num)
-        last_num *= 10
+    pass
 
 
 def task11():
-    n = int(input())
-    sum = 0
-    for i in range(1, n + 1):
-        sum += i
-    for i in range(n - 1):
-        sum -= int(input())
-    print(sum)
+    pass
+
+
+def task12():
+    pass
+
+
+def task13():
+    pass
+
+
+def task14():
+    pass
+
+
+def task15():
+    pass
+
+
+def task16():
+    pass
+
+
+def task17():
+    pass
 
 
 if __name__ == "__main__":
-    task11()
+    task1()
