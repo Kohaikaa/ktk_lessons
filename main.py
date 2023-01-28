@@ -1,3 +1,4 @@
+# Список квадратов
 def task1():
     n = int(input())
     result = 1
@@ -8,6 +9,7 @@ def task1():
         result = i ** 2
 
 
+# Минимальный делитель
 def task2():
     n = int(input())
     i = 2
@@ -16,6 +18,7 @@ def task2():
     print(i)
 
 
+# Степень двойки
 def task3():
     n = int(input())
     grade = 1
@@ -28,6 +31,7 @@ def task3():
     print(grade, num)
 
 
+# Утренняя пробежка
 def task4():
     x = int(input())
     y = int(input())
@@ -38,6 +42,7 @@ def task4():
     print(days)
 
 
+# Длина последовательности
 def task5():
     long_of_nums = 0
     while True:
@@ -48,6 +53,7 @@ def task5():
     print(long_of_nums)
 
 
+# Сумма последовательности
 def task6():
     sum_of_nums = 0
     long_of_nums = 0
@@ -61,6 +67,7 @@ def task6():
     print(result)
 
 
+# Среднее значение последовательности
 def task7():
     biggest_num = 0
     while True:
@@ -73,6 +80,7 @@ def task7():
     print(biggest_num)
 
 
+# Максимум последовательности
 def task8():
     biggest_num = 0
     i = 0
@@ -89,7 +97,20 @@ def task8():
     print(biggest_num_index)
 
 
+# Индекс максимума последовательности
 def task9():
+    counter = 0
+    while True:
+        num = int(input())
+        if num == 0:
+            break
+        if num % 2 == 0:
+            counter += 1
+    print(counter)
+
+
+# Количество четных элементов последовательности
+def task17():
     counter = 0
     while True:
         num = int(input())
@@ -129,6 +150,7 @@ def task11():
     print(before_biggest_num)
 
 
+# Количество элементов, равных максимуму
 def task12():
     biggest_num = 0
     counter = 1
@@ -144,6 +166,7 @@ def task12():
     print(counter)
 
 
+# Числа Фибоначчи
 def task13():
     second_num = 0
     first_num = 1
@@ -159,40 +182,60 @@ def task13():
         print(first_num)
 
 
+# Номер числа Фибоначчи
 def task14():
-    second_num = 0
-    first_num = 1
-    current_num = 0
     n = int(input())
-    i = 2
-    if n == 0:
+    if n <= 0:
         print(0)
     else:
-        while first_num <= n:
-            if first_num == n:
-                print(i)
-                break
-            elif first_num >= n:
-                print(-1)
-                break
-            current_num = first_num + second_num
-            second_num = first_num
-            first_num = current_num
+        last_num = 0
+        new_num = 1
+        i = 1
+        while new_num < n:
+            current_num = new_num + last_num
+            last_num = new_num
+            new_num = current_num
             i += 1
-        print(first_num)
+        if new_num == n:
+            print(i)
+        else:
+            print(-1)
 
 
+# Максимальное число идущих подряд равных элементов
 def task15():
-    pass
+    counter, biggest_counter = 1, 1
+    last_num = 0
+    while True:
+        n = int(input())
+        if n == 0:
+            break
+        if n == last_num:
+            counter += 1
+            if counter > biggest_counter:
+                biggest_counter = counter
+        else:
+            counter = 1
+        last_num = n
+    print(biggest_counter)
 
 
+# Стандартное отклонение
+# result = sqrt(pow(x-s, 2) / n - 1)
 def task16():
-    pass
-
-
-def task17():
-    pass
+    from math import sqrt
+    partial_sum = 0
+    partial_sum_squares = 0
+    x_i = int(input())
+    n = 0
+    while x_i != 0:
+        n += 1
+        partial_sum += x_i
+        partial_sum_squares += x_i ** 2
+        x_i = int(input())
+    result = sqrt((partial_sum_squares - partial_sum ** 2 / n) / (n - 1))
+    print(result)
 
 
 if __name__ == "__main__":
-    task12()
+    task16()
