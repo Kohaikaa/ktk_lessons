@@ -19,55 +19,167 @@ def task2():
 def task3():
     n = int(input())
     grade = 1
-    num = 1
-    while num ** 2 < n:
+    num = 2
+    while num <= n:
         grade += 1
-        num = num ** 2
+        num *= 2
+    grade -= 1
+    num = num // 2
     print(grade, num)
 
 
 def task4():
-    pass
+    x = int(input())
+    y = int(input())
+    days = 1
+    while x < y:
+        x += x * 10 / 100
+        days += 1
+    print(days)
 
 
 def task5():
-    pass
+    long_of_nums = 0
+    while True:
+        num = int(input())
+        if num == 0:
+            break
+        long_of_nums += 1
+    print(long_of_nums)
 
 
 def task6():
-    pass
+    sum_of_nums = 0
+    long_of_nums = 0
+    while True:
+        num = int(input())
+        if num == 0:
+            break
+        sum_of_nums += num
+        long_of_nums += 1
+    result = sum_of_nums / long_of_nums
+    print(result)
 
 
 def task7():
-    pass
+    biggest_num = 0
+    while True:
+        num = int(input())
+        if num == 0:
+            break
+
+        if num > biggest_num:
+            biggest_num = num
+    print(biggest_num)
 
 
 def task8():
-    pass
+    biggest_num = 0
+    i = 0
+    biggest_num_index = 0
+    while True:
+        num = int(input())
+        if num == 0:
+            break
+
+        if num > biggest_num:
+            biggest_num = num
+            biggest_num_index = i
+        i += 1
+    print(biggest_num_index)
 
 
 def task9():
-    pass
+    counter = 0
+    while True:
+        num = int(input())
+        if num == 0:
+            break
+        if num % 2 == 0:
+            counter += 1
+    print(counter)
 
 
 def task10():
-    pass
+    last_num = 0
+    last_num_counter = 0
+    while True:
+        num = int(input())
+        if num == 0:
+            break
+        if num > last_num:
+            last_num_counter += 1
+        last_num = num
+    last_num_counter -= 1
+    print(last_num_counter)
 
 
 def task11():
-    pass
+    biggest_num = 0
+    before_biggest_num = 0
+    while True:
+        num = int(input())
+        if num == 0:
+            break
+        if num > biggest_num:
+            before_biggest_num = biggest_num
+            biggest_num = num
+        elif num > before_biggest_num:
+            before_biggest_num = num
+    print(before_biggest_num)
 
 
 def task12():
-    pass
+    biggest_num = 0
+    counter = 1
+    while True:
+        num = int(input())
+        if num == 0:
+            break
+        if num > biggest_num:
+            counter = 1
+            biggest_num = num
+        elif num == biggest_num:
+            counter += 1
+    print(counter)
 
 
 def task13():
-    pass
+    second_num = 0
+    first_num = 1
+    current_num = 0
+    n = int(input())
+    i = 2
+    if n == 0:
+        print(0)
+    else:
+        while i <= n:
+            second_num, first_num = first_num, first_num + second_num
+            i += 1
+        print(first_num)
 
 
 def task14():
-    pass
+    second_num = 0
+    first_num = 1
+    current_num = 0
+    n = int(input())
+    i = 2
+    if n == 0:
+        print(0)
+    else:
+        while first_num <= n:
+            if first_num == n:
+                print(i)
+                break
+            elif first_num >= n:
+                print(-1)
+                break
+            current_num = first_num + second_num
+            second_num = first_num
+            first_num = current_num
+            i += 1
+        print(first_num)
 
 
 def task15():
@@ -83,4 +195,4 @@ def task17():
 
 
 if __name__ == "__main__":
-    task1()
+    task12()
