@@ -1,241 +1,102 @@
-# Список квадратов
+# Делаем срезы
 def task1():
-    n = int(input())
-    result = 1
-    i = 1
-    while result <= n:
-        print(result, end=' ')
-        i += 1
-        result = i ** 2
+    line = input()
+    print(line[2])
+    print(line[-2])
+    print(line[0:5])
+    print(line[0:-2])
+    print(line[::2])
+    print(line[1::2])
+    print(line[::-1])
+    print(line[::-2])
+    print(len(line))
 
 
-# Минимальный делитель
+# Количество слов
 def task2():
-    n = int(input())
-    i = 2
-    while n % i != 0:
-        i += 1
-    print(i)
+    line = input()
+    print(line.count(' ') + 1)
 
 
-# Степень двойки
+# Две половинки
 def task3():
-    n = int(input())
-    grade = 1
-    num = 2
-    while num <= n:
-        grade += 1
-        num *= 2
-    grade -= 1
-    num = num // 2
-    print(grade, num)
+    line = input()
+    middle = 0
+    first_part, second_part = "", ""
+    if len(line) % 2 == 0:
+        middle = int(len(line) / 2)
+    else:
+        middle = int(len(line) / 2 + 1)
+    first_part = line[0:middle]
+    second_part = line[middle:]
+    print(second_part+first_part)
 
 
-# Утренняя пробежка
+# Переставить два слова
 def task4():
-    x = int(input())
-    y = int(input())
-    days = 1
-    while x < y:
-        x += x * 10 / 100
-        days += 1
-    print(days)
+    line = input()
+    fp = line.split(' ')[0]
+    sp = line.split(' ')[1]
+    finish_line = sp + ' ' + fp
+    print(finish_line)
 
 
-# Длина последовательности
+# Первое и последнее вхождения
 def task5():
-    long_of_nums = 0
-    while True:
-        num = int(input())
-        if num == 0:
-            break
-        long_of_nums += 1
-    print(long_of_nums)
+    line = input()
+    sum = line.count('f')
+    if sum == 1:
+        print(line.find('f'))
+    elif sum > 1:
+        print(line.find('f'), line.rfind('f'))
 
 
-# Сумма последовательности
+# Второе вхождение
 def task6():
-    sum_of_nums = 0
-    long_of_nums = 0
-    while True:
-        num = int(input())
-        if num == 0:
-            break
-        sum_of_nums += num
-        long_of_nums += 1
-    result = sum_of_nums / long_of_nums
-    print(result)
+    line = input()
+    sum = line.count('f')
+    if sum == 1:
+        print(-1)
+    elif sum > 1:
+        first_f = line.find('f')
+        first_part_len = len(line[:first_f])+1
+        print(line[first_f+1:].find('f')+first_part_len)
+    else:
+        print(-2)
 
 
-# Среднее значение последовательности
+# Удаление фрагмента
 def task7():
-    biggest_num = 0
-    while True:
-        num = int(input())
-        if num == 0:
-            break
-
-        if num > biggest_num:
-            biggest_num = num
-    print(biggest_num)
-
-
-# Максимум последовательности
-def task8():
-    biggest_num = 0
-    i = 0
-    biggest_num_index = 0
-    while True:
-        num = int(input())
-        if num == 0:
-            break
-
-        if num > biggest_num:
-            biggest_num = num
-            biggest_num_index = i
-        i += 1
-    print(biggest_num_index)
-
-
-# Индекс максимума последовательности
-def task9():
-    counter = 0
-    while True:
-        num = int(input())
-        if num == 0:
-            break
-        if num % 2 == 0:
-            counter += 1
-    print(counter)
-
-
-# Количество четных элементов последовательности
-def task17():
-    counter = 0
-    while True:
-        num = int(input())
-        if num == 0:
-            break
-        if num % 2 == 0:
-            counter += 1
-    print(counter)
-
-
-def task10():
-    last_num = 0
-    last_num_counter = 0
-    while True:
-        num = int(input())
-        if num == 0:
-            break
-        if num > last_num:
-            last_num_counter += 1
-        last_num = num
-    last_num_counter -= 1
-    print(last_num_counter)
-
-
-def task11():
-    biggest_num = 0
-    before_biggest_num = 0
-    while True:
-        num = int(input())
-        if num == 0:
-            break
-        if num > biggest_num:
-            before_biggest_num = biggest_num
-            biggest_num = num
-        elif num > before_biggest_num:
-            before_biggest_num = num
-    print(before_biggest_num)
-
-
-# Количество элементов, равных максимуму
-def task12():
-    biggest_num = 0
-    counter = 1
-    while True:
-        num = int(input())
-        if num == 0:
-            break
-        if num > biggest_num:
-            counter = 1
-            biggest_num = num
-        elif num == biggest_num:
-            counter += 1
-    print(counter)
-
-
-# Числа Фибоначчи
-def task13():
-    second_num = 0
-    first_num = 1
-    current_num = 0
-    n = int(input())
-    i = 2
-    if n == 0:
-        print(0)
-    else:
-        while i <= n:
-            second_num, first_num = first_num, first_num + second_num
-            i += 1
-        print(first_num)
-
-
-# Номер числа Фибоначчи
-def task14():
-    n = int(input())
-    if n <= 0:
-        print(0)
-    else:
-        last_num = 0
-        new_num = 1
-        i = 1
-        while new_num < n:
-            current_num = new_num + last_num
-            last_num = new_num
-            new_num = current_num
-            i += 1
-        if new_num == n:
-            print(i)
-        else:
-            print(-1)
-
-
-# Максимальное число идущих подряд равных элементов
-def task15():
-    counter, biggest_counter = 1, 1
-    last_num = 0
-    while True:
-        n = int(input())
-        if n == 0:
-            break
-        if n == last_num:
-            counter += 1
-            if counter > biggest_counter:
-                biggest_counter = counter
-        else:
-            counter = 1
-        last_num = n
-    print(biggest_counter)
-
-
-# Стандартное отклонение
-# result = sqrt(pow(x-s, 2) / n - 1)
-def task16():
-    from math import sqrt
-    partial_sum = 0
-    partial_sum_squares = 0
-    x_i = int(input())
-    n = 0
-    while x_i != 0:
-        n += 1
-        partial_sum += x_i
-        partial_sum_squares += x_i ** 2
-        x_i = int(input())
-    result = sqrt((partial_sum_squares - partial_sum ** 2 / n) / (n - 1))
+    line = input()
+    lines_to_replace = line[line.find('h'):line.rfind('h')]
+    result = line.replace(lines_to_replace, "").replace('h', '')
     print(result)
+
+
+# Обращение фрагмента
+def task8():
+    pass
+
+
+# Замена подстроки
+def task9():
+    pass
+
+
+# Удаление символа
+def task10():
+    pass
+
+
+# Замена внутри фрагмента
+def task11():
+    pass
+
+
+# Удалить каждый третий символ
+def task12():
+    pass
 
 
 if __name__ == "__main__":
-    task16()
+    task7()
