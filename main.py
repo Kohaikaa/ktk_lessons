@@ -68,35 +68,51 @@ def task6():
 # Удаление фрагмента
 def task7():
     line = input()
-    lines_to_replace = line[line.find('h'):line.rfind('h')]
-    result = line.replace(lines_to_replace, "").replace('h', '')
-    print(result)
+    line = line[:line.find('h')] + line[line.rfind('h') + 1:]
+    print(line)
 
 
 # Обращение фрагмента
 def task8():
-    pass
+    line = input()
+    part_1 = line[:line.find('h')]
+    part_2 = line[line.find('h'):line.rfind('h') + 1]
+    part_3 = line[line.rfind('h')+1:]
+    result = part_1 + part_2[::-1] + part_3
+    print(result)
 
 
 # Замена подстроки
 def task9():
-    pass
+    line = input()
+    line = line.replace('1', 'one')
+    print(line)
 
 
 # Удаление символа
 def task10():
-    pass
+    print(input().replace('@', ''))
 
 
 # Замена внутри фрагмента
 def task11():
-    pass
+    line = input()
+    part_1 = line[:line.find('h') + 1]
+    part_2 = line[line.find('h') + 1:line.rfind('h')].replace('h', 'H')
+    part_3 = line[line.rfind('h'):]
+    result = part_1 + part_2[::] + part_3
+    print(result)
 
 
 # Удалить каждый третий символ
 def task12():
-    pass
+    line = input()
+    result = ""
+    for i in range(len(line)):
+        if i % 3 != 0:
+            result += line[i]
+    print(result)
 
 
 if __name__ == "__main__":
-    task7()
+    task11()
