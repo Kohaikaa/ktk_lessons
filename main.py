@@ -220,4 +220,3 @@ if __name__ == "__main__":
     bot_num = randint(0, 100)
     print("Бот загадал число, отгадай.")
     game(bot_num)
-    pass
