@@ -1,6 +1,7 @@
 from cat import *
 from good import *
 from car import *
+from trafficlight import *
 
 
 def task1():
@@ -25,7 +26,7 @@ def task2():
 
 
 def task3():
-    car = Car("Black", "BMW", "Lada Sidan Baklajan", 135.0, "I dunno")
+    car = Car("Black", "BMW", "Sedan", 135.0, "I dunno")
     print(car.start())
     print(car.turn("left"))
     print(car.speed_up(150))
@@ -34,7 +35,7 @@ def task3():
     print(car.stop())
     print('\n'*2)
 
-    truck = Car("Green", "Samsung", "Ded", 75.0, "Kinda Sorda box")
+    truck = Car("Green", "Samsung", "Truck", 75.0, "Kinda Sorda box")
     print(truck.start())
     print(truck.turn("straight"))
     print(truck.speed_up(12))
@@ -43,5 +44,32 @@ def task3():
     print(truck.stop())
 
 
+def task4():
+    car = Car("Black", "BMW", "Sedan", 135.0, "I dunno")
+    print(car.start())
+    print(car.turn("left"))
+    print(car.speed_up(150))
+    print(car.speed_down(50))
+    print(car.beep())
+    print(car.stop())
+    print('\n'*2)
+
+    truck = Car("Green", "Samsung", "Truck", 75.0, "Kinda Sorda box")
+    print(truck.start())
+    print(truck.turn("straight"))
+    print(truck.speed_up(12))
+    print(truck.speed_down(12))
+    print(truck.speed_up(1))
+    print(truck.beep())
+    print(truck.stop())
+
+
+def task5():
+    tl = TrafficLight()
+    while True:
+        tl.switching()
+        print()
+
+
 if __name__ == "__main__":
-    pass
+    task5()
