@@ -65,21 +65,17 @@ def greeting(name):
     print(f"Привет, {name}")
 
 
-# Даже пробовать не буду дальше
-
-# def task8_html(my_decorator):
-#     def parag(field) -> str:
-#         print("<p>", end='')
-#         my_decorator(field)
-#         print("</p>")
-#     return parag
+def task8_html(my_decorator):
+    def parag(field) -> str:
+        return f"<p>{my_decorator(field)}</p>"
+    return parag
 
 
-# @task8_html
-# def render_input(field):
-#     return f'<input id="id_{field}" name="{field}">'
+@task8_html
+def render_input(field):
+    return f'<input id="id_{field}" name="{field}">'
+
 
 if __name__ == "__main__":
-    # decorated = task7_decorator(greeting)
-    # decorated()
+    print(render_input("login"))
     pass
