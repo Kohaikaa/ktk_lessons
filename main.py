@@ -3,7 +3,6 @@ import re
 
 
 def calculator(num1: int, num2: int, op: str):
-    # Причина ненавидеть Python №1: много малоиспользуемых функций.
     print(eval(f"{num1}{op}{num2}"))
     exec(f'print({num1}{op}{num2})')
 
@@ -18,8 +17,6 @@ def task2():
     print(*cap_s)
 
 
-# Причина ненавидеть Python №2: несмотря на динамическое определение типа,
-# приходится указывать тип данных, чтобы видеть, какие ф-ции доступны.
 def task3_honest(data: list) -> list:
     return list(filter(lambda x: x % 2 == 0, data))
 
@@ -52,7 +49,6 @@ def task6_alphabet():
     pprint(al_dict)
 
 
-# Причина ненавидеть Python №3: извращенные декораторы.
 def task7_decorator(my_decorator):
     def get_name() -> str:
         name = input('Введите имя: ')
